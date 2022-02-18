@@ -49,7 +49,7 @@ const configuration: webpack.Configuration = {
       NODE_ENV: 'production'
     }),
     new MonacoWebpackPlugin({
-      languages: ['json', 'xml']
+      languages: ['json', 'xml', 'html']
     })
   ]
 }
