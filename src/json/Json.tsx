@@ -1,11 +1,22 @@
-import { Button } from 'antd'
-import * as monaco from 'monaco-editor'
 import { useEffect, useRef } from 'react'
-import { jsonToHTML } from './workerFormatter'
+import { Row, Col, Button } from 'antd'
+import * as monaco from 'monaco-editor'
 
 const sample = ''
 
+function isJsonStr(str: string): boolean {
+  try {
+    JSON.parse(str)
+    return true
+  } catch (error) {
+    return false
+  }
+}
+
 function jsonReviver(k: string, v: any) {
+  if (isJsonStr(v)) {
+    return JSON.parse(v)
+  }
 
   return v
 }
@@ -23,13 +34,11 @@ export const Json = () => {
       if (input) {
         try {
           const json = JSON.parse(input, jsonReviver)
-
-          console.log(JSON.stringify(json, null, 2))
+          const output = JSON.stringify(json, null, 2)
+          editor.setValue(output)
         } catch (error) {
           console.log(error)
         }
-        // console.log(jsonToHTML(input))
-        // editor.setValue(JSON.stringify(output, null, 2))
       }
     }
   }
@@ -37,16 +46,18 @@ export const Json = () => {
   useEffect(() => {
     if (monacoEditorElementRef.current) {
       editorRef.current = monaco.editor.create(monacoEditorElementRef.current, {
-        value: sample
+        value: sample,
+        language: 'json'
       })
     }
   }, [])
 
   return (
-    <div>
-      <div ref={monacoEditorElementRef} style={{ height: 480, width: '100%' }} />
-
-      <Button onClick={handleParse}>Format</Button>
-    </div>
+    <Row>
+      <Col span={24}>
+        <div ref={monacoEditorElementRef} style={{ height: 480, width: '80%' }} />
+        <Button onClick={handleParse}>Format</Button>
+      </Col>
+    </Row>
   )
 }
