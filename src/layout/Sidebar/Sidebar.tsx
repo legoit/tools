@@ -16,6 +16,10 @@ const routes = [
   {
     path: '/html2jsx',
     title: 'HTML to JSX'
+  },
+  {
+    path: '/url-parser',
+    title: 'URL Parser'
   }
 ]
 
