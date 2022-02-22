@@ -250,7 +250,7 @@
     "react-element-to-jsx-string": "^14.3.4",
     "react-json-view": "^1.21.3",
     "react-router-dom": "^6.2.1",
-    "tailwindcss": "^3.0.22",
+    "tailwindcss": "2.2.19",
     "url-parse": "^1.5.9",
     "url-query-parser": "^2.0.6",
     "vkbeautify": "^0.99.3",
