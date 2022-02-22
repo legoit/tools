@@ -1,6 +1,4 @@
 import React from 'react'
-import 'normalize.css'
-import 'antd/dist/antd.css'
 import './App.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
