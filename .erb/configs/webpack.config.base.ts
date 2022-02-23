@@ -24,6 +24,10 @@ const configuration: webpack.Configuration = {
             transpileOnly: true
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
       }
     ]
   },
