@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Sidebar } from '../layout/Sidebar/Sidebar'
+import { Layout } from '../layout/Sidebar/Sidebar'
 import { Xml } from '../xml/Xml'
 import { Json } from '../json/Json'
 const HTMLToJSX = React.lazy(() => import('../html2jsx'))
@@ -15,7 +15,7 @@ const Hello = () => {
 export default function App() {
   return (
     <Router>
-      <Sidebar>
+      <Layout>
         <Routes>
           <Route path="/xml" element={<Xml />} />
           <Route path="/json" element={<Json />} />
@@ -37,7 +37,7 @@ export default function App() {
           />
           <Route path="/" element={<Hello />} />
         </Routes>
-      </Sidebar>
+      </Layout>
     </Router>
   )
 }
