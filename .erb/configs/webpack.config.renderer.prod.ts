@@ -35,12 +35,7 @@ const configuration: webpack.Configuration = {
   entry: [path.join(webpackPaths.srcRendererPath, 'index.tsx')],
 
   output: {
-    path: webpackPaths.distRendererPath,
-    publicPath: './',
-    filename: 'renderer.js',
-    library: {
-      type: 'umd',
-    },
+    path: webpackPaths.distRendererPath
   },
 
   module: {
@@ -88,6 +83,9 @@ const configuration: webpack.Configuration = {
       }),
       new CssMinimizerPlugin(),
     ],
+    splitChunks: {
+      chunks: 'all'
+    }
   },
 
   plugins: [
@@ -106,7 +104,8 @@ const configuration: webpack.Configuration = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'static/css/[name].[contenthash:8].css',
+      chunkFilename: 'static/css/[name].[contenthash:8].chunk.css'
     }),
 
     new BundleAnalyzerPlugin({
