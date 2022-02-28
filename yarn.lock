@@ -1407,23 +1407,6 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@legoit/instantiation-react@^0.0.6":
-  version "0.0.6"
-  resolved "https://npm.pkg.github.com/download/@legoit/instantiation-react/0.0.6/ac8d12d92d478a56220010da93d57dea0446a0869522dcb2fcfd65471f2f4704#fe76156bcaac2a9efd51af1ad54df9689bc063f7"
-  integrity sha512-g03ARfWWlBneJacGie5rjeHFJuNCyXCHdYTHznK5Xbsbb/npAG6+oKZR15114ow61stxsiXWh/f0eDz6M1J92g==
-  dependencies:
-    "@legoit/lego" "^0.0.16"
-
-"@legoit/instantiation@^0.0.2":
-  version "0.0.2"
-  resolved "https://npm.pkg.github.com/download/@legoit/instantiation/0.0.2/b551a5607dbc5a72a906bcb0fc7c4105c54437a98e8ca0135fb6306661b2e3a9#6d79cd4eedcb012538c387e7b4d92d59a5bec5bb"
-  integrity sha512-nhQ9hl5srCI3NRB16Rin2oiUOyZMFVX87drxpF++3ngH+5+yZMIQrl6J603nq+I++ZE00brH8CBeB3a+lCudZg==
-
-"@legoit/lego@^0.0.16":
-  version "0.0.16"
-  resolved "https://npm.pkg.github.com/download/@legoit/lego/0.0.16/130fd7e34b25d0605ffc4bdaefbc0cde33c13ccfa81da59bc4720bfe77f4d712#99e4b100ca154ee3c10c99d5b535f46fdffde11c"
-  integrity sha512-ttHl8Sgy02LaS6mq9/VLHQhy0VqmKyMgX3oWLvi0aNwfF+HWfHuNPf2FAGzqZaHdQ6ZpP+M1uygAyd12GX/COQ==
-
 "@malept/cross-spawn-promise@^1.1.0":
   version "1.1.1"
   resolved "https://registry.npmmirror.com/@malept/cross-spawn-promise/-/cross-spawn-promise-1.1.1.tgz#504af200af6b98e198bce768bc1730c6936ae01d"
