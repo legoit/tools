@@ -1,10 +1,22 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
+  mode: 'jit',
+  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    fontFamily: {
+      sans: ['Inter', ...fontFamily.sans],
+    },
+    extend: {},
   },
-  corePlugins: {
-    preflight: false
+  variants: {
+    extend: {},
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
