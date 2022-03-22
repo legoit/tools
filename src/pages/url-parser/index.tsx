@@ -4,6 +4,7 @@ import { Button, Row, Col } from 'antd'
 import urlParse from 'url-parse'
 import UrlQueryParser from 'url-query-parser'
 import { IEditorRef, MonacoEditor } from '@/components/Editor'
+import { Header } from '@/components/Header'
 
 // eslint-disable-next-line import/dynamic-import-chunkname
 const BrowserReactJsonView = dynamic(() => import('react-json-view'), {
@@ -35,13 +36,13 @@ export default function UrlParser(): JSX.Element {
   }
 
   return (
-    <Row>
-      <Col span={24}>
-        <MonacoEditor language="text" value={sample} ref={editorRef} />
+    <div>
+      <Header title="URL Parser">
         <Button onClick={handleParse}>Format</Button>
-        <BrowserReactJsonView src={urlJson} name={false} />
-        <BrowserReactJsonView src={queryJson} name={false} />
-      </Col>
-    </Row>
+      </Header>
+      <MonacoEditor language="text" value={sample} ref={editorRef} />
+      <BrowserReactJsonView src={urlJson} name={false} />
+      <BrowserReactJsonView src={queryJson} name={false} />
+    </div>
   )
 }

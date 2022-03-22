@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react'
-import { Input } from 'antd'
+import { Menu, Input } from 'antd'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import SplitPane from 'react-split-pane'
 
 type IRoute = {
@@ -29,28 +30,25 @@ const routes: IRoute[] = [
 ]
 
 export const Sidebar: FC = () => {
+  const router = useRouter()
+
   return (
     <div>
       <div className="p-4 border-b border-b-gray-100">
         <Input.Search placeholder="Filter traits..." />
       </div>
       <div className="mt-2 overflow-y-auto rounded">
-        <ul>
+        <Menu defaultSelectedKeys={[router.pathname]}>
           {routes.map((route) => {
             return (
-              <li key={route.path}>
+              <Menu.Item key={route.path} icon={route.icon}>
                 <Link href={route.path}>
-                  <a className="flex items-center px-4 p-2 font-normal text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                    {route.icon ? (
-                      <route.icon className="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-                    ) : null}
-                    <span className="ml-3 text-xs">{route.title}</span>
-                  </a>
+                  <a>{route.title}</a>
                 </Link>
-              </li>
+              </Menu.Item>
             )
           })}
-        </ul>
+        </Menu>
       </div>
     </div>
   )

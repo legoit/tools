@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react'
-import { Row, Col, Button } from 'antd'
+import { useRef } from 'react'
+import { Button } from 'antd'
 import { IEditorRef, MonacoEditor } from '@/components/Editor'
+import { Header } from '@/components/Header'
 
 const sample = ''
 
@@ -42,11 +43,11 @@ export default function Json(): JSX.Element {
   }
 
   return (
-    <Row>
-      <Col span={24}>
-        <MonacoEditor ref={editorRef} value={sample} language="json" />
+    <div>
+      <Header title="JSON Formetter">
         <Button onClick={handleParse}>Format</Button>
-      </Col>
-    </Row>
+      </Header>
+      <MonacoEditor ref={editorRef} value={sample} language="json" />
+    </div>
   )
 }

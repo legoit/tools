@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Button, Form, Input, Row, Col } from 'antd'
 import { IEditorRef, MonacoEditor } from '@/components/Editor'
+import { Header } from '@/components/Header'
 
 const sample = `
 <!-- Hello world -->
@@ -32,11 +33,11 @@ export default function HTML2JSX(): JSX.Element {
   }
 
   return (
-    <Row>
-      <Col span={24}>
-        <MonacoEditor ref={editorRef} language="html" value={sample} />
+    <div>
+      <Header title="HTML to JSX">
         <Button onClick={handleParse}>Format</Button>
-      </Col>
-    </Row>
+      </Header>
+      <MonacoEditor ref={editorRef} language="html" value={sample} />
+    </div>
   )
 }
