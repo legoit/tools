@@ -9,11 +9,11 @@ export const getURL = (): string => {
 }
 
 const DEFAULT_TITLE = ''
-const DEFAULT_TITLE_TEMPLATE = 'Nextjs Starter | %s'
+const DEFAULT_TITLE_TEMPLATE = '工具箱 | %s'
 const DEFAULT_DESCRIPTION =
   'A Next.js starter kit template with React 17 + Typescript + Tailwind CSS 2 + React Query 3 + GitHub Auth + Passwordless Auth + Fauna DB.'
 const DEFAULT_CANONICAL = getURL()
-const SITE_NAME = 'Nextjs Starter'
+const SITE_NAME = '工具箱'
 const DEFAULT_OG_IMAGE = `${DEFAULT_CANONICAL}/preview.png`
 const TWITTER_HANDLE = '@pbteja1998'
 const TWITTER_CARD_TYPE = 'summary_large_image'
