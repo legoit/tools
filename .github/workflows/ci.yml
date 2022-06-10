@@ -50,12 +50,12 @@ jobs:
       - name: 重启服务
         uses: appleboy/ssh-action@master
         env:
-          WORKDIR: ${{ secrets.WORKDIR }}
+          WORK_DIR: ${{ secrets.WORK_DIR }}
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          envs: WORKDIR
+          envs: WORK_DIR
           script: |
-            cd $WORKDIR
+            cd $WORK_DIR
             yarn run restart
